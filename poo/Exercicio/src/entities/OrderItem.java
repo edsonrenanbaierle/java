@@ -17,10 +17,10 @@ public class OrderItem {
     }
     
     
-    public OrderItem(Integer quantity, Double price, Product product) {
+    public OrderItem(Integer quantity, Product product) {
         this.quantity = quantity;
-        this.price = price;
         this.product = product;
+        this.price = subTotal();
     }
     
     
@@ -48,7 +48,7 @@ public class OrderItem {
         this.product = product;
     }
     
-    public void subTotal(){
-        this.price = this.product.getPrice() * this.quantity;
+    public Double subTotal(){
+        return this.price = this.product.getPrice() * this.quantity;
     }
 }
